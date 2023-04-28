@@ -34,7 +34,7 @@ contract EzioPublicSale is ReentrancyGuard,Ownable,Pausable {
   //administrator's wallet address
   address public wallet;
   //total raised USDC
-  uint256 totalRaisedAmount;
+  uint256 public totalRaisedAmount;
   //contribution of address
   mapping(address => Contribution) private contributions;
 

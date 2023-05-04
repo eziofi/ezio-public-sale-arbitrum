@@ -11,7 +11,7 @@
     "deploy": "hardhat deploy",
     "deploy:arbitrum": "hardhat --network arbitrum deploy",
     "redeploy-public-sale:arbitrum": "hardhat --network arbitrum run ./scripts/upgrade/redeploy_public_sale.ts",
-    "verify:arbitrum": "hardhat verify --network arbitrum 0xFcB0F92CEe40aFeAC56c25c74D653EA46dAfeE84 0xff970a61a04b1ca14834a43f5de4533ebddb5cc8 0xfCF0c7c5d7DFD8Cd54F76A86Bb02278895a5f16E 0xCf8Cf1342791956A3f87F29A350aB87Fd569F942 0x49f2Da4e498b1473FFA8308C66267Ff87Fc7722B 1682650788 1682737158"
+    "verify:arbitrum": "hardhat verify --network arbitrum 0x36D132D6eA4Bf0D23a215163Ccde0175f90335c2 0xff970a61a04b1ca14834a43f5de4533ebddb5cc8 0xfCF0c7c5d7DFD8Cd54F76A86Bb02278895a5f16E 0xCf8Cf1342791956A3f87F29A350aB87Fd569F942 0x49f2Da4e498b1473FFA8308C66267Ff87Fc7722B 1683164761 1683423931"
   },
   "author": "",
   "license": "ISC",

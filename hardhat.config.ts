@@ -17,7 +17,7 @@ if (!RPC_URL) {
 const PRIVATE_KEY = process.env.PRIVATE_KEY||"";
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "hardhat",
+  defaultNetwork: "arbitrum",
   networks: {
     hardhat: {
       forking: {

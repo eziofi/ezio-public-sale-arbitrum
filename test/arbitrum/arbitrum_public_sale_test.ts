@@ -26,6 +26,7 @@ describe("contract connect test in arbitrum network", function () {
     console.log("----------contract openingTime=",await publicSale.connect(signer).openingTime());
     console.log("----------contract closingTime=",await publicSale.connect(signer).closingTime());
     console.log("----------contract totalRaisedAmount=",await publicSale.connect(signer).totalRaisedAmount());
+    console.log("----------contract USDC balance=",await usdc.balanceOf(publicSale.address));
   });
   it("buy", async function () {
     await usdc.connect(signer).approve(publicSale.address,BigNumber.from("10000"));

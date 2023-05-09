@@ -40,6 +40,7 @@ export interface EzioPublicSaleInterface extends utils.Interface {
     "closingTime()": FunctionFragment;
     "executeFlag()": FunctionFragment;
     "hasClosed()": FunctionFragment;
+    "hasWithdrawn(address)": FunctionFragment;
     "isOpen()": FunctionFragment;
     "openingTime()": FunctionFragment;
     "owner()": FunctionFragment;
@@ -66,6 +67,7 @@ export interface EzioPublicSaleInterface extends utils.Interface {
       | "closingTime"
       | "executeFlag"
       | "hasClosed"
+      | "hasWithdrawn"
       | "isOpen"
       | "openingTime"
       | "owner"
@@ -117,6 +119,10 @@ export interface EzioPublicSaleInterface extends utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "hasClosed", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "hasWithdrawn",
+    values: [PromiseOrValue<string>]
+  ): string;
   encodeFunctionData(functionFragment: "isOpen", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "openingTime",
@@ -170,6 +176,10 @@ export interface EzioPublicSaleInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "hasClosed", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "hasWithdrawn",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "isOpen", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "openingTime",
@@ -311,6 +321,11 @@ export interface EzioPublicSale extends BaseContract {
 
     hasClosed(overrides?: CallOverrides): Promise<[boolean]>;
 
+    hasWithdrawn(
+      account: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>;
+
     isOpen(overrides?: CallOverrides): Promise<[boolean]>;
 
     openingTime(overrides?: CallOverrides): Promise<[BigNumber]>;
@@ -375,6 +390,11 @@ export interface EzioPublicSale extends BaseContract {
 
   hasClosed(overrides?: CallOverrides): Promise<boolean>;
 
+  hasWithdrawn(
+    account: PromiseOrValue<string>,
+    overrides?: CallOverrides
+  ): Promise<boolean>;
+
   isOpen(overrides?: CallOverrides): Promise<boolean>;
 
   openingTime(overrides?: CallOverrides): Promise<BigNumber>;
@@ -436,6 +456,11 @@ export interface EzioPublicSale extends BaseContract {
     executeFlag(overrides?: CallOverrides): Promise<boolean>;
 
     hasClosed(overrides?: CallOverrides): Promise<boolean>;
+
+    hasWithdrawn(
+      account: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<boolean>;
 
     isOpen(overrides?: CallOverrides): Promise<boolean>;
 
@@ -529,6 +554,11 @@ export interface EzioPublicSale extends BaseContract {
 
     hasClosed(overrides?: CallOverrides): Promise<BigNumber>;
 
+    hasWithdrawn(
+      account: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     isOpen(overrides?: CallOverrides): Promise<BigNumber>;
 
     openingTime(overrides?: CallOverrides): Promise<BigNumber>;
@@ -597,6 +627,11 @@ export interface EzioPublicSale extends BaseContract {
     executeFlag(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     hasClosed(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    hasWithdrawn(
+      account: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
 
     isOpen(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 

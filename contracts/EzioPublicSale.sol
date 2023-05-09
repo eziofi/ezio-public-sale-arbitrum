@@ -92,6 +92,15 @@ contract EzioPublicSale is ReentrancyGuard,Ownable,Pausable {
   }
 
   /**
+  * @notice           has been withdrawn of account
+  * @param account    address of contributor
+  * @return bool
+  */
+  function hasWithdrawn(address account) external view returns (bool) {
+    return contributions[account].hasWithdrawn;
+  }
+
+  /**
   * @notice    withdraw EZIO and xEZIO after public sale
   */
   function withdraw() external nonReentrant onlyWhileClose whenNotPaused {

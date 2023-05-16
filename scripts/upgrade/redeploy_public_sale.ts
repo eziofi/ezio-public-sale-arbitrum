@@ -21,8 +21,9 @@ async function main() {
   xezio = XEZIOV1__factory.connect(XEZIO_JSON.address,signer);
   //redeploy EzioPublicSale contract
   //let dateTime = BigNumber.from(new Date().getTime()).div(1000).add(30);
-  let dateTime = BigNumber.from(1683860400);
-  publicSale = await new EzioPublicSale__factory(signer).deploy(USDC_ADDRESS,ezio.address,xezio.address,ADMIN_WALLET_ADDRESS,dateTime,dateTime.add(259200));
+  let openingTime = BigNumber.from(1684206000);
+  let closingTime = openingTime.add(BigNumber.from("86400").mul(1));
+  publicSale = await new EzioPublicSale__factory(signer).deploy(USDC_ADDRESS,ezio.address,xezio.address,ADMIN_WALLET_ADDRESS,openingTime,closingTime);
   await publicSale.deployed();
   await write(filePath,"EzioPublicSale.json",JSON.stringify({"address":publicSale.address,"abi":EzioPublicSale__factory.abi}));
   await sleep(5000);
